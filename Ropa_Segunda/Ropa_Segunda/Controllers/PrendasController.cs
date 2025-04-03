@@ -20,7 +20,13 @@ namespace Ropa_Segunda.Controllers
             Prendas.prenda = prenda;
             return Prendas.Insertar();
         }
-        [HttpPost]
-        [Route("")]
+
+        //[HttpDelete]
+        //[Route("Eliminar/{id}")]
+        //public string Eliminar(int id)
+        //{
+        //    clsPrendas Prendas = new clsPrendas();
+        //    return Prendas.Eliminar(id);
+        //}
     }
 }

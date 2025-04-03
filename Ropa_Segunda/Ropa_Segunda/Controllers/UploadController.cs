@@ -13,6 +13,7 @@ namespace Ropa_Segunda.Controllers
     public class UploadFilesController : ApiController
     {
         [HttpPost]
+        [Route("CargarArchivo")]
         public async Task<HttpResponseMessage> CargarArchivo(HttpRequestMessage request, string Datos, string Proceso)
         {
             clsUpload upload = new clsUpload();
@@ -22,15 +23,8 @@ namespace Ropa_Segunda.Controllers
             return await upload.CargarArchivos(false);
 
         }
-
-        [HttpGet]
-        public HttpResponseMessage LeerArchivo(string NombreArchivo)
-        {
-            clsUpload upload = new clsUpload();
-            return upload.LeerArchivo(NombreArchivo);
-        }
-
         [HttpPost]
+        [Route("Actualizar")]
         public async Task<HttpResponseMessage> Actualizar(HttpRequestMessage request, string Datos, string Proceso)
         {
             clsUpload upload = new clsUpload();
