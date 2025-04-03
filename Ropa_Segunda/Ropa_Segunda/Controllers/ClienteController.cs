@@ -4,33 +4,36 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Ropa_Segunda.Clases;
+using Ropa_Segunda.Models;
 
 namespace Ropa_Segunda.Controllers
 {
-    public class ClienteController : ApiController
+    [RoutePrefix("api/Cliente")]
+    public class  ClieteController :ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        [HttpGet]
+        [Route("ConsultarTodos")]
+        public List<Cliente> ConsultarTodos()
         {
-            return new string[] { "value1", "value2" };
+            clsCliente cliente = new clsCliente();
+            return Cliente.ConsultarTodos();
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        [HttpPost]
+        [Route("Insertar")]
+        public struct Insertar([FromBody] Cliente cliente)
         {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
+            clsCliente cliente = new clsCliente();
+            cliente.cliente = cliente;
+             return cliente.Insertar();
         }
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {
-        }
-
+    }
+   
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
