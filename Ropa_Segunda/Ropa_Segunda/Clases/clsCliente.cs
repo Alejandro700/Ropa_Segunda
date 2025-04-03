@@ -23,7 +23,16 @@ namespace Ropa_Segunda.Clases
                 return "Error al registrar el cliente: " + ex.Message;
             }
 		}
-		
+
+		public List<Cliente> ConsultarTodos()
+		{
+			return dbexamen.Clientes
+				.OrderBy(p => p.Nombre)
+				.ToList();
+
+        }
+
+
 
     }
 }
